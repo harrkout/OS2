@@ -1,0 +1,32 @@
+execve("./hello", ["./hello"], 0x7ffe98c7f980 /* 57 vars */) = 0
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffe0ae75810) = -1 EINVAL (Invalid argument)
+brk(NULL)                               = 0x2439000
+brk(0x2439d80)                          = 0x2439d80
+arch_prctl(ARCH_SET_FS, 0x2439380)      = 0
+uname({sysname="Linux", nodename="manjaro", ...}) = 0
+readlink("/proc/self/exe", "/home/harrkout/Documents/OS2/lab"..., 4096) = 124
+brk(0x245ad80)                          = 0x245ad80
+brk(0x245b000)                          = 0x245b000
+mprotect(0x4c9000, 16384, PROT_READ)    = 0
+newfstatat(1, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}, AT_EMPTY_PATH) = 0
+newfstatat(0, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}, AT_EMPTY_PATH) = 0
+write(1, "Give seconds: ", 14)          = 14
+read(0, "80\n", 1024)                   = 3
+write(1, "min:   1 \n", 10)             = 10
+write(1, "left:  20\n", 10)             = 10
+rt_sigaction(SIGINT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x4607a0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGQUIT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x4607a0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+mmap(NULL, 36864, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7f15c4f16000
+rt_sigprocmask(SIG_BLOCK, ~[], [CHLD], 8) = 0
+clone(child_stack=0x7f15c4f1eff0, flags=CLONE_VM|CLONE_VFORK|SIGCHLD) = 3656
+munmap(0x7f15c4f16000, 36864)           = 0
+rt_sigprocmask(SIG_SETMASK, [CHLD], NULL, 8) = 0
+wait4(3656, [{WIFEXITED(s) && WEXITSTATUS(s) == 127}], 0, NULL) = 3656
+rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x4607a0}, NULL, 8) = 0
+rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x4607a0}, NULL, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=3656, si_uid=1000, si_status=127, si_utime=0, si_stime=0} ---
+lseek(0, -1, SEEK_CUR)                  = -1 ESPIPE (Illegal seek)
+exit_group(0)                           = ?
++++ exited with 0 +++
